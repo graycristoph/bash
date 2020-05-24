@@ -1,0 +1,48 @@
+#!/bin/bash
+help(){
+	echo -e "\v Use: brightness [option] ...\n"\
+		"     brightness --up\n"\
+		"-u \t --up   \t raise brightnes by 100 units\n"\
+		"-d \t --down \t lowers brightness by 100 units\n"\
+		"-h \t --help \t display help menu and exit\v"
+}
+#
+main(){
+red="\e[31;1m"
+green="\e[32;1m"
+reset="\e[0m"
+local max=$(cat /sys/class/backlight/intel_backlight/max_brightness)
+local now=$(cat /sys/class/backlight/intel_backlight/actual_brightness)
+local min=100
+case "$1" in
+	-u | --up)
+		now=$(expr $now + 100)
+		if [ "$now" -lt 3100 ]; then
+			echo $now > /sys/class/backlight/intel_backlight/brightness
+			echo -e "\vbrightness ${green}$now${reset}\v"
+		else
+			echo -e "\vupper brightness limit ${red}$max${reset}\v"
+			return 1;
+		fi
+	;;
+	-d | --down)
+		now=$(expr $now - 100)
+		if [ "$now" -lt  $min ]; then
+			echo -e "lower brightness limit ${red}$min${reset}"
+			return 1;
+		else
+			echo $now > /sys/class/backlight/intel_backlight/brightness
+			echo -e "actual brightness ${green}$now${reset}"
+		fi
+	;;
+	-h | --help)
+		help
+	;;
+	*)
+		help
+		return 1;
+	;;
+esac
+}
+#
+main $1
