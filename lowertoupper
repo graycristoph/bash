@@ -1,0 +1,37 @@
+#!/bin/bash
+clear -T $TERM
+#
+#str=$1
+main(){
+str=$1
+echo "$str" | sed -e "s/\([a-z]\)/\1\n/g" | \
+while read letter;
+do
+  LETTER="$(echo $letter | tr [:lower:] [:upper:])"
+# echo $LETTER
+  if [ -n "$LETTER" ]; then
+    echo -e "$str" | sed  "s/$letter/ $LETTER /"
+    sleep 0.3
+    clear -x
+  fi
+done
+}
+help(){
+	echo -e " Uso: lowertoupper [opciones] ..\n" \
+		"lowertoupper --texto mi_texto_de_ejemplo\n" \
+		"-e \t --ejemplo \t ejecuta un ejemplo pre-programado\n"\
+		"-t \t --texto \t lee el texto de entrada\n"\
+		"-h \t --help \t muestra el menu de ayuda y sale del programa"
+}
+
+case "$1" in
+	-e | --ejemplo)
+		main abcdefghijklmnopqrstuvwxyz
+	;;
+	-t | --texto)
+		main $2
+	;;
+	*)
+		help
+	;;
+esac
