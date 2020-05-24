@@ -1,0 +1,39 @@
+#!/bin/bash
+# Script que mide el tiempo de ejecución de algún
+# otro programa que uno ejecute, en linux esta
+# el binario time, pero este script es solo para fines
+# educativos, sin alguna relevancia.
+#
+crono(){
+	iter=0;
+	timestart="$(date +%Y-%m-%dT%H:%M:%S)"
+	start="$(date -d"$timestart" +%s)"
+	bash $1
+	timend="$(date +%Y-%m-%dT%H:%M:%S)"
+	end="$(date -d"$timend" +%s)"
+	echo "$(($end-$start)) seg"
+}
+#
+help(){
+	echo -e " Use: crono [opción]\n"\
+		"     crono --exec script.sh\n"\
+		"-e \t --exec \t opción para ejecutar el cronometro y el script\n"\
+		"   \t        \t o el binario proporcionado\n"\
+		"-h \t --help \t muestra el menú de ayuda y sale del programa"
+}
+main(){
+	case "$1" in
+		-e | --exec)
+			crono $2
+		;;
+		-h | --help)
+			help
+			return 0;
+		;;
+		*)
+			help
+			return 1;
+		;;
+	esac
+}
+main $1 $2
