@@ -1,0 +1,95 @@
+#!/bin/bash
+#********************************************************************************
+#sudo apt update
+#sudo apt upgrade
+asciiart(){
+	echo -e "\e[32;1m                 (                  \e[0m"
+	echo -e "\e[32;1m   *   )         )\\ )               \e[0m"
+	echo -e "\e[32;1m   )  /(  (    )(()/((   )     (    \e[0m"
+	echo -e "\e[32;1m  ( )(_))))\\( /( /(_))\\ /((   ))\\   \e[0m"
+	echo -e "\e[32;1m (_(_())/((_)\\()|_))((_|_))\\ /((_)  \e[0m"
+	echo -e "\e[32;1m |_   _(_))((_)\\| |  (_))((_|_))    \e[0m"
+	echo -e "\e[32;1m   | | / -_) \\ /| |__| \\ V // -_)   \e[0m"
+	echo -e "\e[32;1m   |_| \\___/_\\_\\|____|_|\\_/ \\___| \e[0m"
+	echo -e "	github/graycristoph"
+	sleep 2
+	clear -x
+}
+size(){
+	size=$(apt-cache show $1 | grep '^Size: ' | cut -d' ' -f2 )
+	if [ -n "$(echo "$size" | grep '[0-9]\{6,8\}')" ]
+	then
+		echo $size | sed -e "s/[0-9]\{5\}$/ Mb/g"
+		return $size
+	fi
+}
+check(){
+	local total=0
+	clear -x;
+	asciiart
+	list=('texlive-base' 'texlive-bibtex-extra' 'texlive-extra-utils' \
+	'texlive-font-utils' 'texlive-fonts-recommended' 'texlive-formats-extra' \
+	'texlive-lang-spanish' 'texlive-latex-base' 'texlive-latex-extra' \
+	'texlive-latex-recommended' 'texlive-pictures' 'texlive-plain-generic' \
+	'texlive-publishers' 'texlive-science' 'texlive-xetex');
+	for i in "${list[@]}";
+	do
+		if [[ -z "$(dpkg -l | grep -i $i)" ]]
+		then
+			echo -e "$(TZ=CSD6CDT date +%X) Es necesario instaler: \e[32;1m$i\e[0m"
+			total=$(expr $total + $(echo "$(size $i)" | cut -d' ' -f1))
+			echo "$total" > .ezis
+			echo "$i" >> .need
+			sleep 1
+			clear -T $TERM
+		else
+			echo -e "$(TZ=CSD6CDT date +%X) \e[32;1m$i\e[0m Ya esta instalado: $i"
+			sleep 1
+			clear -T $TERM
+		fi
+	done
+#
+	sleep 3
+	clear -x
+}
+#
+main(){
+	check
+	if [ -e .ezis ]
+	then
+		if [ -e .need ]
+		then
+			echo -e "\e[1mDeseas instalar los paquetes recomendados: [s/n]\e[0m"
+			echo -e "Paquetes a instalar:\n\e[32;1m$(cat .need)\e[0m\v"
+			echo -e "Tamaño aproximado a usar: \e[32;1m$(cat .ezis) Mb\e[0m\v"
+			read
+			case "${REPLY}" in
+				n | N | no | NO | No)
+					clear -T $TERM
+					asciiart
+					rm .need .ezis
+					return 0;
+				;;
+				s | s | si | SI | Si)
+					clear -T $TERM
+					sudo apt install $(cat .need | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/ /g') -y
+					rm .need .ezis
+				;;
+				*)
+					clear -T $TERM
+					echo -e "\e[31;1mError\e[0m"
+					sleep 2
+					clear -T $TERM
+					rm .need .ezis
+					return 1;
+				;;
+			esac
+		fi
+	else
+		echo -e "\e[32;1mTodo esta instalado correctamente\e[0m"
+		sleep 2
+		clear -T $TERM
+		return 0;
+	fi
+}
+main 
