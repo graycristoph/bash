@@ -1,0 +1,1961 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "marcasDeclaracion": {
+      "type": "object",
+      "properties": {
+        "marcaPresentacionPropuestaContrib": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaRealizoCambiosDeclaracion": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaIncumplidos": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaCreditoFiscal": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaTitularCLABE": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaIntNomNoProvSF": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaIntNomProvSF": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaIntRealNoProvSF": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaIntRealProvSF": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaIntRealRetPar": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaPerdidaNoProvSF": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaPerdidaProvSF": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaImpSocEmi": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaIngrAcumDiv": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaDivUtili": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaTotISRSocEmi": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaIngrAcumSal": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaIngrExentos": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaIngrNoAcum": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaTotIgrSala": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaSubEmpleo": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaOtrosIngrEx": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaTotIngrEx": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaSueldoOrd1": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaSueldoOrd2": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaDifPerdida": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaDifUtilidad": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaIngrExActProf": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaPerdidaFis": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaPTUEjercicio": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaTotIngrActProf": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaUtilidadFis": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaUtilidadGravAcum": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaEstimFisDisca": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaIngrAcumArre": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaPredialArre": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaTotIngrArre": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaTotalIngresPTec": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcaISRRetenidoPTec": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "marcasDesgloseDeduccionesPersonales": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "idDeduccion": {
+                "type": "string"
+              },
+              "marcaMovimiento": {
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "marcaRelacionBeneficiario": {
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "marcaNivelEdad": {
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "marcaSecuenciaLogica": {
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "identificadorConcepto": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 25
+              }
+            },
+            "required": [
+              "idDeduccion",
+              "marcaMovimiento",
+              "identificadorConcepto"
+            ]
+          }
+        },
+        "marcaDesgloseRetenciones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "marcaIngreso": {
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "rfcRetenedor": {
+                "type": "string",
+                "minLength": 12,
+                "maxLength": 13
+              },
+              "tipoIngreso": {
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  12,
+                  13
+                ]
+              },
+              "selloDigital": {
+                "enum": [
+                  0,
+                  1
+                ]
+              }
+            },
+            "required": [
+              "marcaIngreso",
+              "rfcRetenedor",
+              "tipoIngreso"
+            ]
+          }
+        }
+      },
+      "required": [
+        "marcaRealizoCambiosDeclaracion",
+        "marcaCreditoFiscal",
+        "marcaTitularCLABE",
+        "marcaIntNomNoProvSF",
+        "marcaIntNomProvSF",
+        "marcaIntRealNoProvSF",
+        "marcaIntRealProvSF",
+        "marcaIntRealRetPar",
+        "marcaPerdidaNoProvSF",
+        "marcaPerdidaProvSF",
+        "marcaImpSocEmi",
+        "marcaIngrAcumDiv",
+        "marcaDivUtili",
+        "marcaTotISRSocEmi",
+        "marcaIngrAcumSal",
+        "marcaIngrExentos",
+        "marcaIngrNoAcum",
+        "marcaTotIgrSala",
+        "marcaSubEmpleo",
+        "marcaOtrosIngrEx",
+        "marcaTotIngrEx",
+        "marcaSueldoOrd1",
+        "marcaSueldoOrd2",
+        "marcaDifPerdida",
+        "marcaDifUtilidad",
+        "marcaIngrExActProf",
+        "marcaPerdidaFis",
+        "marcaPTUEjercicio",
+        "marcaTotIngrActProf",
+        "marcaUtilidadFis",
+        "marcaUtilidadGravAcum",
+        "marcaEstimFisDisca",
+        "marcaIngrAcumArre",
+        "marcaPredialArre",
+        "marcaTotIngrArre",
+        "marcaTotalIngresPTec",
+        "marcaISRRetenidoPTec"
+      ]
+    },
+    "declaracionContribuyente": {
+      "type": "object",
+      "properties": {
+        "declaracion": {
+          "type": "object",
+          "properties": {
+            "aceptoPropuestaRecibida": {
+              "enum": [
+                0,
+                1
+              ]
+            },
+            "marcaInformacionCopropietarios": {
+              "enum": [
+                0,
+                1
+              ]
+            },
+            "fechaHoraPresentacion": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "tipoDeclaracion": {
+              "enum": [
+                1,
+                2
+              ]
+            },
+            "firmaDeclaracion": {
+              "enum": [
+                0,
+                1
+              ]
+            },
+            "ejercicio": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9999
+            },
+            "periodo": {
+              "enum": [
+                0,
+                35
+              ]
+            },
+            "pagosProvisionales": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "folioDeclaracion": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "marcaInformacionCopropietarios",
+            "fechaHoraPresentacion",
+            "tipoDeclaracion",
+            "firmaDeclaracion",
+            "ejercicio",
+            "periodo",
+            "folioDeclaracion"
+          ]
+        },
+        "identificacionContribuyente": {
+          "type": "object",
+          "properties": {
+            "situacionFiscalContribuyente": {
+              "enum": [
+                0,
+                1
+              ]
+            },
+            "situacionDomicilioFiscalContribuyente": {
+              "enum": [
+                0,
+                1
+              ]
+            },
+            "alrContribuyente": {
+              "type": "string",
+              "minLength": 0,
+              "maxLength": 10
+            },
+            "curp": {
+              "type": "string",
+              "minLength": 18,
+              "maxLength": 18
+            },
+            "nombres": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "apellidoPaterno": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "apellidoMaterno": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "rfcContribuyente": {
+              "type": "string",
+              "minLength": 12,
+              "maxLength": 13
+            },
+            "boId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 38
+            }
+          },
+          "required": [
+            "situacionFiscalContribuyente",
+            "situacionDomicilioFiscalContribuyente",
+            "alrContribuyente",
+            "nombres",
+            "apellidoPaterno",
+            "rfcContribuyente"
+          ]
+        },
+        "desgloseDeduccionesPersonales": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "idDeduccion": {
+                "type": "string"
+              },
+              "metodoPago": {
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ]
+              },
+              "fechaEmision": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "rfcEmisorCFDI": {
+                "type": "string",
+                "minLength": 12,
+                "maxLength": 13
+              },
+              "nombreEmisor": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 250
+              },
+              "tipoDeduccion": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D",
+                  "E",
+                  "F",
+                  "G",
+                  "H",
+                  "I",
+                  "J",
+                  "L",
+                  "M"
+                ]
+              },
+              "curpBeneficiario": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 18
+              },
+              "importe": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 99999999999999
+              },
+              "nivelEducativo": {
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              },
+              "claveConcepto": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 99999999999999
+              },
+              "identificadorConcepto": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 25
+              }
+            },
+            "required": [
+              "idDeduccion",
+              "identificadorConcepto",
+              "metodoPago",
+              "rfcEmisorCFDI",
+              "tipoDeduccion",
+              "importe"
+            ]
+          }
+        },
+        "desgloseRetenciones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "tipoIngreso": {
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  12,
+                  13
+                ]
+              },
+              "rfcRetenedor": {
+                "type": "string",
+                "minLength": 12,
+                "maxLength": 13
+              },
+              "nombreEmisor": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 250
+              },
+              "ingresosPagados": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 99999999999999
+              },
+              "isrRetenido": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 99999999999999
+              }
+            },
+            "required": [
+              "tipoIngreso",
+              "rfcRetenedor",
+              "ingresosPagados"
+            ]
+          }
+        },
+        "acumuladoDeduccion": {
+          "type": "object",
+          "properties": {
+            "cantidadRecuperada": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "sumaDeduccionesPersonales": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          }
+        },
+        "determinacionIsr": {
+          "type": "object",
+          "properties": {
+            "baseGravable": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "deduccionesPersonales": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "diferenciaIsrCargo": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "indiqueOpcionSaldoFavor": {
+              "enum": [
+                1,
+                2
+              ]
+            },
+            "impuestoAcreditablePagadoExtranjero": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "impuestoRetenidoContribuyente": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "impuestoSobreIntRealRetiroPar": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "impuestoIngresosAcumulables": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "impuestoIngresosNoAcumulables": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "isrCausado": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosUtilidadesAcumulables": {
+              "type": "integer",
+              "minimum": -99999999999999,
+              "maximum": 99999999999999
+            },
+            "isrAFavorEjercicio": {
+              "type": "integer",
+              "minimum": -99999999999999,
+              "maximum": 99999999999999
+            },
+            "isrTarifaAnual": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "nombreBanco": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 250
+            },
+            "cuentaClabe": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 18
+            },
+            "otrasCantCargo": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "otrasCantFavor": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "banderaCuentaClabe": {
+              "type": "integer",
+              "minimum": -99,
+              "maximum": 99
+            },
+            "pagosProvisionales": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "perdidas": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "reduccionesIsr": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "subsidioEmpleo": {
+              "type": "integer",
+              "minimum": -99999999999999,
+              "maximum": 99999999999999
+            },
+            "sectorPrimario": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "estimuloFiscalRFN": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "baseGravable",
+            "deduccionesPersonales",
+            "impuestoRetenidoContribuyente"
+          ]
+        },
+        "adquisicionBienes": {
+          "type": "object",
+          "properties": {
+            "deduccionesAutorizadas": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "diferenciaPerdida": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosAcumulables": {
+              "type": "integer",
+              "minimum": -99999999999999,
+              "maximum": 99999999999999
+            },
+            "ingresosExentos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "totalIngresosAdquisicion": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "totalISRRetenido": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "pagosProvisionalesAdq": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "escrituraPublica": {
+              "enum": [
+                0,
+                1
+              ]
+            }
+          },
+          "required": [
+            "totalIngresosAdquisicion",
+            "escrituraPublica"
+          ]
+        },
+        "intereses": {
+          "type": "object",
+          "properties": {
+            "interesNomNoProvSistFin": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "interesNomProvSistFin": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "interesRealNoProvSistFin": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "interesRealProvSistFin": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "interesRealRetirosParciales": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "perdidaNoProvSistFin": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "perdidaProvSistFin": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresoRetirosParcial": {
+              "enum": [
+                0,
+                1
+              ]
+            }
+          }
+        },
+        "premios": {
+          "type": "object",
+          "properties": {
+            "ingresosAcumPremios": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "premiosObtenidos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "premiosObtenidos"
+          ]
+        },
+        "dividendos": {
+          "type": "object",
+          "properties": {
+            "impuestoPagadoSociedadEmisora": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosAcumDividendos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "montoDividendosUtilidades": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "montoTotalISR": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "montoDividendosUtilidades"
+          ]
+        },
+        "demasIngresos": {
+          "type": "object",
+          "properties": {
+            "deduccionesAutorizadas": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosAcumulables": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosExentos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosObtenidos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "perdidas": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "ingresosObtenidos"
+          ]
+        },
+        "salarios": {
+          "type": "object",
+          "properties": {
+            "ingresosAcumulables": {
+              "type": "integer",
+              "minimum": -99999999999999,
+              "maximum": 99999999999999
+            },
+            "ingresosExentos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosNoAcumulables": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "subsidioEmpleoSala": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "otrosIngresosExentos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "totalIngresosExentos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ultimoSueldo1": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ultimoSueldo2": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "totalIngresosSueldosYSalarios": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "subsidioEntregadoEfectivo": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "totalIngresosSueldosYSalarios"
+          ]
+        },
+        "actividadProfesional": {
+          "type": "object",
+          "properties": {
+            "deduccionesAutorizadas": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "diferenciaPerdida": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "diferenciaUtilidad": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosExentos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "perdidaFiscal": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ptuPagadaEjercicio": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "totalIngresos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "utilidadFiscal": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "utilidadGravableAcumulable": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "totalIngresos"
+          ]
+        },
+        "actividadEmpresarial": {
+          "type": "object",
+          "properties": {
+            "ingresosExentos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosTotalesPropiosActExtranjeros": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosTotalesPropiosActNacionales": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "perdidaFiscal": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "perdidaFiscalEjerciciosAnteriores": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ptuPagadaEjercicio": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "totalIngresos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "totalDeduccionesAutorizadas": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "utilidadFiscal": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "utilidadGravableAcumulable": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "totalIngresos"
+          ]
+        },
+        "arrendamiento": {
+          "type": "object",
+          "properties": {
+            "deduccionAdicionalFomentoPrimerEmp": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "deduccionOpcional": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "deduccionesAutorizadas": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "deduccionesExcedenIngresosPerdida": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "estimuloFiscalPersonasDiscap": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosAcumulables": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "predial": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosCobrados": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "ingresosCobrados"
+          ]
+        },
+        "enajenacionBienes": {
+          "type": "object",
+          "properties": {
+            "deduccionesAutorizadasGastos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "gananciaAcumulable": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "perdida": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "totalIngresosEnajBienes": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "gananciaNoAcumulableEnajBienes": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "totalIngresosEnajBienes"
+          ]
+        },
+        "plataformasTecnologicas": {
+          "type": "object",
+          "properties": {
+            "deduccionesAutorizadas": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "perdidasEjAnte": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "perdidaFiscal": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ptu": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "totalIngresos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "isrRetenido": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "utilidadGravableAcumulable": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "totalIngresos"
+          ]
+        }
+      },
+      "required": [
+        "declaracion",
+        "identificacionContribuyente",
+        "determinacionIsr"
+      ]
+    },
+    "precarga": {
+      "type": "object",
+      "properties": {
+        "desgloseDeduccionesPersonales": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "idDeduccion": {
+                "type": "string"
+              },
+              "metodoPago": {
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ]
+              },
+              "fechaEmision": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "rfcEmisorCFDI": {
+                "type": "string",
+                "minLength": 12,
+                "maxLength": 13
+              },
+              "nombreEmisor": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 250
+              },
+              "tipoDeduccion": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D",
+                  "E",
+                  "F",
+                  "G",
+                  "H",
+                  "I",
+                  "J",
+                  "L",
+                  "M"
+                ]
+              },
+              "curpBeneficiario": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 18
+              },
+              "importe": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 99999999999999
+              },
+              "nivelEducativo": {
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              },
+              "claveConcepto": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 99999999999999
+              },
+              "identificadorConcepto": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 25
+              }
+            },
+            "required": [
+              "idDeduccion",
+              "metodoPago",
+              "rfcEmisorCFDI",
+              "tipoDeduccion",
+              "importe",
+              "identificadorConcepto"
+            ]
+          }
+        },
+        "desgloseRetenciones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "tipoIngreso": {
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  12,
+                  13
+                ]
+              },
+              "rfcRetenedor": {
+                "type": "string",
+                "minLength": 12,
+                "maxLength": 13
+              },
+              "nombreEmisor": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 250
+              },
+              "ingresosPagados": {
+                "type": "integer",
+                "minimum": -99999999999999,
+                "maximum": 99999999999999
+              },
+              "isrRetenido": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 99999999999999
+              }
+            },
+            "required": [
+              "tipoIngreso",
+              "rfcRetenedor",
+              "ingresosPagados"
+            ]
+          }
+        },
+        "acumuladoDeduccion": {
+          "type": "object",
+          "properties": {
+            "cantidadRecuperada": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "sumaDeduccionesPersonales": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          }
+        },
+        "determinacionIsr": {
+          "type": "object",
+          "properties": {
+            "baseGravable": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "deduccionesPersonales": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "diferenciaIsrCargo": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "impuestoAcreditablePagadoExtranjero": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "impuestoRetenidoContribuyente": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "impuestoSobreIntRealRetiroPar": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "impuestoIngresosAcumulables": {
+              "type": "integer",
+              "minimum": -99999999999999,
+              "maximum": 99999999999999
+            },
+            "impuestoIngresosNoAcumulables": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "isrCausado": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosUtilidadesAcumulables": {
+              "type": "integer",
+              "minimum": -99999999999999,
+              "maximum": 99999999999999
+            },
+            "isrAFavorEjercicio": {
+              "type": "integer",
+              "minimum": -99999999999999,
+              "maximum": 99999999999999
+            },
+            "isrTarifaAnual": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "nombreBanco": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 250
+            },
+            "cuentaClabe": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 18
+            },
+            "banderaCuentaClabe": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99
+            },
+            "pagosProvisionales": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "perdidas": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "reduccionesIsr": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "subsidioEmpleo": {
+              "type": "integer",
+              "minimum": -99999999999999,
+              "maximum": 99999999999999
+            },
+            "sectorPrimario": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "baseGravable",
+            "deduccionesPersonales",
+            "impuestoRetenidoContribuyente"
+          ]
+        },
+        "adquisicionBienes": {
+          "type": "object",
+          "properties": {
+            "deduccionesAutorizadas": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "diferenciaPerdida": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosAcumulables": {
+              "type": "integer",
+              "minimum": -99999999999999,
+              "maximum": 99999999999999
+            },
+            "ingresosExentos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "totalIngresosAdquisicion": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "totalIngresosAdquisicion"
+          ]
+        },
+        "intereses": {
+          "type": "object",
+          "properties": {
+            "interesNomNoProvSistFin": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "interesNomProvSistFin": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "interesRealNoProvSistFin": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "interesRealProvSistFin": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "interesRealRetirosParciales": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "perdidaNoProvSistFin": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "perdidaProvSistFin": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          }
+        },
+        "premios": {
+          "type": "object",
+          "properties": {
+            "ingresosAcumPremios": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "premiosObtenidos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "premiosObtenidos"
+          ]
+        },
+        "dividendos": {
+          "type": "object",
+          "properties": {
+            "impuestoPagadoSociedadEmisora": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosAcumDividendos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "montoDividendosUtilidades": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "montoDividendosUtilidades"
+          ]
+        },
+        "demasIngresos": {
+          "type": "object",
+          "properties": {
+            "deduccionesAutorizadas": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosAcumulables": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosExentos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosObtenidos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "perdidas": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "ingresosObtenidos"
+          ]
+        },
+        "salarios": {
+          "type": "object",
+          "properties": {
+            "ingresosAcumulables": {
+              "type": "integer",
+              "minimum": -99999999999999,
+              "maximum": 99999999999999
+            },
+            "ingresosExentos": {
+              "type": "integer",
+              "minimum": -99999999999999,
+              "maximum": 99999999999999
+            },
+            "ingresosNoAcumulables": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "subsidioEmpleoSala": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "totalIngresosSueldosYSalarios": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "otrosIngresosExentos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "totalIngresosExentos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "subsidioEntregadoEfectivo": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "totalIngresosSueldosYSalarios"
+          ]
+        },
+        "actividadProfesional": {
+          "type": "object",
+          "properties": {
+            "deduccionesAutorizadas": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "diferenciaPerdida": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "diferenciaUtilidad": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosExentos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "perdidaFiscal": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ptuPagadaEjercicio": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "totalIngresos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "utilidadFiscal": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "utilidadGravableAcumulable": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "totalIngresos"
+          ]
+        },
+        "actividadEmpresarial": {
+          "type": "object",
+          "properties": {
+            "ingresosExentos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosTotalesPropiosActExtranjeros": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosTotalesPropiosActNacionales": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "perdidaFiscal": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "perdidaFiscalEjerciciosAnteriores": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ptuPagadaEjercicio": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "totalIngresos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "totalDeduccionesAutorizadas": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "utilidadFiscal": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "utilidadGravableAcumulable": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "totalIngresos"
+          ]
+        },
+        "arrendamiento": {
+          "type": "object",
+          "properties": {
+            "deduccionAdicionalFomentoPrimerEmp": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "deduccionOpcional": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "deduccionesAutorizadas": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "deduccionesExcedenIngresosPerdida": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "estimuloFiscalPersonasDiscap": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosAcumulables": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "predial": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "ingresosCobrados": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "ingresosCobrados"
+          ]
+        },
+        "enajenacionBienes": {
+          "type": "object",
+          "properties": {
+            "deduccionesAutorizadasGastos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "gananciaAcumulable": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "perdida": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "totalIngresosEnajBienes": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "gananciaNoAcumulableEnajBienes": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "totalIngresosEnajBienes"
+          ]
+        },
+        "plataformasTecnologicas": {
+          "type": "object",
+          "properties": {
+            "perdidaFiscal": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "totalIngresos": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "isrRetenido": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            },
+            "utilidadGravableAcumulable": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99999999999999
+            }
+          },
+          "required": [
+            "totalIngresos"
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "marcasDeclaracion",
+    "declaracionContribuyente"
+  ]
+},
